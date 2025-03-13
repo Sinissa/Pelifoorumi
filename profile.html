@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Mystery+Quest&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Profiili</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'DM Mono';
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-background {
+            background-image: url(img3.jpg);
+            position: absolute;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .left-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .profile-picture {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 3px solid rgb(186, 186, 186);
+            background-color: #21212152;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            background-image: url(plus.png);
+        }
+
+        .container-games {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .game-input {
+            display: none;
+        }
+
+        .game-label {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px solid rgb(186, 186, 186);
+            background-color: #21212184;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container-stats {
+            border: 3px solid rgb(186, 186, 186);
+            width: 600px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .container-stats .stats {
+            padding: 16px;
+        }
+
+        .container-info .info textarea {
+            height: 200px;
+            background-color: #2121214e;
+            width: 600px;
+            border: 3px solid rgb(186, 186, 186);
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .container-info #submit {
+            background-color: rgb(178, 74, 0);
+            text-align: right;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        .otsikko h1 {
+            display: inline-block;
+            margin: 0;
+            font-size: 29px;
+            margin-bottom: 4px;
+            text-shadow: rgb(143, 43, 0) 2px 1px;
+            color: rgb(255, 255, 255);
+        }
+
+        .container-stats .stats {
+            height: 200px;
+            background-color: #2121214e;
+        }
+
+        .stat-item {
+            margin-bottom: 20px;
+        }
+
+        .stat-item h2 {
+            display: inline-block;
+            margin: 5px;
+            font-size: 20px;
+            text-shadow: 3px 3px black;
+            color: rgb(255, 106, 0);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-background"></div>
+
+    <div class="container">
+        <div class="left-container">
+            <label for="profile-input">
+                <div class="profile-picture" id="profile-picture"></div>
+            </label>
+            <input type="file" id="profile-input" accept="image/*" onchange="loadProfilePicture(event)">
+
+            <div class="container-games">
+                <label for="game-input-1" class="game-label" id="game-label-1">Game 1</label>
+                <input type="file" id="game-input-1" class="game-input" accept="image/*" onchange="loadGameImage(event, 1)">
+                
+                <label for="game-input-2" class="game-label" id="game-label-2">Game 2</label>
+                <input type="file" id="game-input-2" class="game-input" accept="image/*" onchange="loadGameImage(event, 2)">
+                
+                <label for="game-input-3" class="game-label" id="game-label-3">Game 3</label>
+                <input type="file" id="game-input-3" class="game-input" accept="image/*" onchange="loadGameImage(event, 3)">
+                
+                <label for="game-input-4" class="game-label" id="game-label-4">Game 4</label>
+                <input type="file" id="game-input-4" class="game-input" accept="image/*" onchange="loadGameImage(event, 4)">
+                
+                <label for="game-input-5" class="game-label" id="game-label-5">Game 5</label>
+                <input type="file" id="game-input-5" class="game-input" accept="image/*" onchange="loadGameImage(event, 5)">
+                
+                <label for="game-input-6" class="game-label" id="game-label-6">Game 6</label>
+                <input type="file" id="game-input-6" class="game-input" accept="image/*" onchange="loadGameImage(event, 6)">
+            </div>
+        </div>
+
+        <div>
+            <div class="otsikko">
+                <h1>Hei, *NIMI* </h1>
+            </div>
+            <div class="container-info">
+                <div class="info">
+                    <textarea name="info" maxlength="100" id="info" placeholder="Esittele itseäsi"></textarea>
+                </div>
+                <input type="submit" value="Tallenna" id="submit">
+            </div>
+
+            <div class="otsikko">
+                <h1>Statistiikka</h1>
+            </div>
+            <div class="container-stats">
+                <div class="stats">
+                    <div class="stat-item">
+                        <h2>Tykkäykset: <span id="like-count">0</span></h2>
+                        <!--<button class="like-button" onclick="incrementLikes()">Tykkää</button>-->
+                    </div>
+                    <div class="stat-item">
+                        <h2>Julkaisut: <span id="post-count">0</span></h2>
+                        <!--<button class="post-button" onclick="incrementPosts()">Julkaise</button>-->
+                    </div>
+                    <div class="stat-item">
+                        <h2>Seuraajat: <span id="follower-count">0</span></h2>
+                        <!--<button class="follower-button" onclick="incrementFollower()">Seuraa</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function incrementLikes() {
+            const likeCountElement = document.getElementById('like-count');
+            let currentCount = parseInt(likeCountElement.innerText);
+            likeCountElement.innerText = currentCount + 1;
+        }
+
+        function incrementPosts() {
+            const postCountElement = document.getElementById('post-count');
+            let currentCount = parseInt(postCountElement.innerText);
+            postCountElement.innerText = currentCount + 1;
+        }
+
+        function incrementFollower() {
+            const followerCountElement = document.getElementById('follower-count');
+            let currentCount = parseInt(followerCountElement.innerText);
+            followerCountElement.innerText = currentCount + 1;
+        }
+
+        function loadProfilePicture(event) {
+            const profilePicture = document.getElementById('profile-picture');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                profilePicture.style.backgroundImage = `url(${e.target.result})`;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function loadGameImage(event, gameNumber) {
+            const gameLabel = document.getElementById(`game-label-${gameNumber}`);
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                gameLabel.style.backgroundImage = `url(${e.target.result})`;
+                gameLabel.innerText = ''; // Clear the text once an image is loaded
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
