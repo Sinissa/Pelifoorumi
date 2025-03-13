@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>Tämä on headeri</header>
+    <div class="brightness"></div>
+    <div class="container">
+        <!--Navigation-->
+        <div class="navigate">
+            <span><a href="">Kotisivu</a> >> <a href="konsolipalsta.html">Konsolipalsta</a> >> Aihe</span>
+        </div>
+
+        <!--Topic Section-->
+        <div class="topic-container">
+            <!--Original thread-->
+            <div class="head">
+                <div class="authors">Author</div>
+                <div class="content">Topic: random topic (Read 1325 Times)</div>
+            </div>
+
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="">Username</a></div>
+                    <div>Role</div>
+                    <img src="https://cdn.pixabay.com/photo/2015/11/06/13/27/ninja-1027877_960_720.jpg" alt="">
+                    <div>Posts: <u>45</u></div>
+                    <div>Points: <u>4586</u></div>
+                </div>
+                <div class="content">
+                    <div class="container">
+                        <h1 id="topicTitle">Loading...</h1> <br><br>
+                        <p id="topicMessage"></p><br> <br>
+                        <hr> <br> <br>
+                        <h2>Comments:</h2> <br>
+                        <div id="commentsSection"></div>
+                        <div class="comment-area">
+                            <textarea id="replyInput" placeholder="Write a reply..."></textarea>
+                            <input type="button" id="replyBtn" value="Reply">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>&copy;  Taitotalo</span>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
