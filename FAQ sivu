@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeliPöllö FAQ</title>
+    <style>
+        body {
+            background-image: url(pics/ai-generated-8767502_1280.jpg);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 150px;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color:  #456515cf;
+            background-position: center;
+            font-family: 'Courier New', Courier, monospace ;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #222222bc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #444;
+            padding: 10px 0;
+            text-align: left;
+        }
+        .faq-item button {
+            background: none;
+            border: none;
+            color: #ffd04d;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        .faq-answer {
+            display: none;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+        .input-container {
+            margin-top: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        input {
+            background: #333;
+            color: #fff;
+        }
+        button {
+            background: #ffd04d;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body><!--käytin paljon tekoälyä, jos epäselvyyksiä kysy-->
+    <div class="container">
+        <h1>Pelipöllö FAQ</h1><!-- headeri --> 
+        <div id="faq-list"><!-- lista johon tulee kysymykset ja niiden vastaukset, siihen on lisätty js helpottaen sujuvuutta ja interaktiivistuutta --> 
+            <div class="faq-item">
+                <button onclick="toggleAnswer('q1')">Mikä on Pelipöllö?</button><!-- toggleAnswer antaa tehdä listan kysymyksiä jotka ovat buttoneit, jossa on toggele toiminto jolla saa sitten vastuakset näkymään alas --> 
+                <p id="q1" class="faq-answer">PeliPöllö on paras opas pelivinkkeihin, nikseihin ja yhteisön hauskanpitoon!</p>
+            </div>
+            <div class="faq-item">
+                <button onclick="toggleAnswer('q2')">Miten voin liittyä yhteisöön?</button>
+                <p id="q2" class="faq-answer">Rekisteröidy verkkosivustollamme ja liity Discord-palvelimeemme!</p>
+            </div>
+            <div class="faq-item">
+                <button onclick="toggleAnswer('q3')">Mitä pelejä käsittelemme?</button>
+                <p id="q3" class="faq-answer">Käsittelemme monia pelejä FPS:stä RPG:ihin ja paljon muuta!</p>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <h2>Lähetä oma kysymyksesi</h2>
+            <input type="text" id="user-question" placeholder="Kirjoita kysymyksesi...">
+            <button onclick="addQuestion()">Lähetä</button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function addQuestion() {
+            var questionInput = document.getElementById('user-question');
+            var questionText = questionInput.value.trim();
+            if (questionText === '') return;
+            
+            var newQuestionId = 'q' + Date.now();
+            var faqList = document.getElementById('faq-list');
+            
+            var newEntry = document.createElement('div');
+            newEntry.classList.add('faq-item');
+            
+            var button = document.createElement('button');
+            button.textContent = questionText;
+            button.setAttribute('onclick', `toggleAnswer('${newQuestionId}')`);
+            
+            var answer = document.createElement('p');
+            answer.id = newQuestionId; //aina kun käyttäjä kysyy nii se näkyy palstassa ja sitten siihen alle tulee alla mainnittu vastaus ja siihen voi sitten lisää vastauksen
+            answer.classList.add('faq-answer');
+            answer.textContent = "Kiitos kysymyksestä! Vastaamme pian.";
+            
+            newEntry.appendChild(button);
+            newEntry.appendChild(answer);
+            faqList.appendChild(newEntry);
+            
+            questionInput.value = '';
+        }
+    </script>
+</body>
+</html>
+<!-- lisään vielä kommenteja, jotta on ymmärrettävä ja niin että saa lisättyä js koodin sql:lään-->
