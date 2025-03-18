@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    font-family: "DM Mono", monospace;
+}
+
+body {
+    background-image: url(img3.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 30px;
+}
+
+form {
+    text-align: center;
+    padding: 30vh 0;
+}
+
+
+input {
+    margin: 15px;
+    padding: 5px;
+}
+
+#checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+
+#button {
+    padding: 10px;
+    background: linear-gradient(0deg, rgba(136, 75, 6, 0.815) 61%, rgba(231, 112, 32, 0.3) 100%);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#button:hover {
+    color: white; 
+    filter: drop-shadow(0 0 2em rgb(251, 119, 4));
+}
