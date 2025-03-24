@@ -1,3 +1,6 @@
+// Get forum identifier from URL or set a default one
+const forumKey = "topics_forum_pcpalsta"; // Change this for different forums
+
 document.addEventListener("DOMContentLoaded", function () {
     const showCreateTopic = document.getElementById("showCreateTopic");
     const createTopicSection = document.getElementById("createTopicSection");
@@ -12,14 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadTopics() {
         topicsList.innerHTML = "";
-        const topics = JSON.parse(localStorage.getItem("topics")) || [];
+        const topics = JSON.parse(localStorage.getItem(forumKey)) || []; // Use unique forum key
         topics.forEach((topic, index) => {
             const topicDiv = document.createElement("div");
             topicDiv.classList.add("table-row");
             topicDiv.innerHTML = `
                 <div class="status"><i class="fa fa-book"></i></div>
                 <div class="subjects">
-                    <a href="pckeskustelu.html?index=${index}">${topic.title}</a><br>
+                    <a href="pckeskustelu.html?index=${index}&forumKey=${forumKey}">${topic.title}</a><br>
                     <span>Started by <b>User</b></span>
                 </div>
                 <div class="replies">0 replies <br> 0 views</div>
@@ -33,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = topicTitleInput.value.trim();
         const message = topicMessageInput.value.trim();
         if (title && message) {
-            let topics = JSON.parse(localStorage.getItem("topics")) || [];
+            let topics = JSON.parse(localStorage.getItem(forumKey)) || [];
             topics.push({ title, message, replies: [] });
-            localStorage.setItem("topics", JSON.stringify(topics));
+            localStorage.setItem(forumKey, JSON.stringify(topics)); // Save under unique forum key
             topicTitleInput.value = "";
             topicMessageInput.value = "";
             createTopicSection.classList.add("hidden");
@@ -49,20 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function deleteItems() {
-    localStorage.clear();
-  }
-  
+    localStorage.removeItem(forumKey); // Delete only current forum topics
+    location.reload();
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const topicIndex = urlParams.get("index");
+    const forumKey = urlParams.get("forumKey"); // Retrieve forum key from URL
+
     const topicTitleElement = document.getElementById("topicTitle");
     const topicMessageElement = document.getElementById("topicMessage");
     const commentsSection = document.getElementById("commentsSection");
     const replyInput = document.getElementById("replyInput");
     const replyBtn = document.getElementById("replyBtn");
 
-    let topics = JSON.parse(localStorage.getItem("topics")) || [];
+    let topics = JSON.parse(localStorage.getItem(forumKey)) || [];
 
     if (topicIndex !== null && topics[topicIndex]) {
         topicTitleElement.textContent = topics[topicIndex].title;
@@ -90,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div>
                         <p>${replyObj.text}</p>
                         <div class="stat-item">
-                            <h1>Tykkäykset: <span id="like-count-${index}">${replyObj.likes}</span></h1>
-                            <button class="like-button" onclick="incrementLikes(${index})">Tykkää</button>
+                            <h1>Likes: <span id="like-count-${index}">${replyObj.likes}</span></h1>
+                            <button class="like-button" onclick="incrementLikes(${index})">Like</button>
                         </div>
                     </div>
                 </div>
@@ -105,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (comment) {
             if (!topics[topicIndex].replies) topics[topicIndex].replies = [];
             topics[topicIndex].replies.push({ text: comment, likes: 0 });
-            localStorage.setItem("topics", JSON.stringify(topics));
+            localStorage.setItem(forumKey, JSON.stringify(topics)); // Store under correct forum key
             replyInput.value = "";
             loadComments();
         }
@@ -113,10 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.incrementLikes = function (commentIndex) {
         topics[topicIndex].replies[commentIndex].likes += 1;
-        localStorage.setItem("topics", JSON.stringify(topics));
+        localStorage.setItem(forumKey, JSON.stringify(topics));
         document.getElementById(`like-count-${commentIndex}`).innerText = topics[topicIndex].replies[commentIndex].likes;
     };
 
     loadComments();
 });
-
