@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,
+    300;1,400;1,500&family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0;
+   
+    
+}
+
+html{
+    font-size: 14px;
+    font-family: 'Titillium Web', sans-serif;
+    padding-left: 60px;
+}
+
+body {
+    background-image: url(./kuvat/img3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color:#FEFEFE;
+}
+
+/* .brightness {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: -99;
+    backdrop-filter: brightness(50%);
+    position: fixed;
+    top: 0;
+    left: 0;
+}    */   
+
+a{
+    color: orange;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+h1{
+    font-size:16px;
+    font-weight: bolder;
+}
+
+button {
+    background: orange;
+}
+
+/* ########################################### */
+/*           Forums.html                       */
+/* ########################################### */
+
+
+.container{
+    margin: 20px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.subforum{
+    margin-top:20px;
+   
+}
+
+
+.subforum-row{
+    display: grid;
+    grid-template-columns: 7% 60% 13% 20%;
+    
+}
+
+.subforum-column{
+    padding: 10px;
+    margin:4px;
+    border-radius: 5px;
+    
+}
+
+.subforum-description *{
+    margin-block: 0;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subforum-icon i{
+    font-size: 45px;
+}
+
+.subforum-devider{
+    display: none;   
+}
+
+
+/* For the smartphones */
+@media screen and (max-width: 460px) {
+    .container{
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 65% 35%;
+    }
+
+    .subforum-devider{
+        display: block;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255, 255, 255, 0.75), rgba(190, 190, 190, 0));
+    }
+
+    
+
+  }
+
+/* For the tablets */
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+    .container{
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+
+    .subforum-icon i{
+        font-size: 35px;
+    }
+
+    html{
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 16px;
+    }
+
+  }
+
+
+
+/* forum info Styling */
+.forum-info{
+    padding: 20px;
+}
+
+.chart{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Header Styling */
+
+/*header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(163, 23, 23);
+    text-align: center;
+}*/
+
+/* Footer Styling */
+
+/*footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(163, 23, 23);
+    text-align: center;
+}*/
+
+/* ########################################### */
+/*            posts.html                       */
+/* ########################################### */
+
+/* posts table's head  */
+.table-head{
+    display: flex;
+}
+
+.table-head div{
+    padding: 5px;
+    margin: 2px;
+    font-weight: bold;
+}
+
+.table-head .status{
+    flex: 5%;
+}
+
+.table-head .subjects{
+    flex: 70%;
+}
+
+.table-head .replies{
+    flex: 10%;
+}
+
+.table-head .last-reply{
+    flex: 15%;
+}
+
+/* posts table's body  */
+
+.table-row{
+    display: flex;
+}
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
+    padding: 5px;
+    margin: 2px;
+    border: 3px solid white;
+}
+
+.table-row .status{
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.table-row .subjects{
+    flex: 70%;
+}
+
+.table-row .replies{
+    flex: 10%;
+}
+
+.table-row .last-reply{
+    flex: 15%;
+}
+
+/* navigation path*/
+.navigate{
+    margin-block: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.navigate a{
+    color: white;
+}
+
+.navigate a:hover{
+    color: orange;
+    font-weight: bolder;
+}
+
+
+
+
+/* ########################################### */
+/*            detail.html                      */
+/* ########################################### */
+
+.head{
+    display: flex;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.authors{
+    flex: 20%;
+}
+
+.content{
+    flex: 80%;
+}
+
+hr {
+    border-color: white;
+}
+
+.body{
+    display: flex;
+    padding: 10px;
+    margin-top: 5px;
+    border: 3px solid gray;
+}
+
+.body .authors .username{
+    font-size: 20px;
+}
+
+.body .authors img{
+    max-width: 50px;
+    max-height: 80px;
+}
+
+.body .content .comment button{
+    border:none;
+    padding:10px;
+    font-weight: bolder;
+    box-shadow: 4px 6px #fff;
+    cursor: pointer;
+    float: right;
+}
+
+/* comment section */
+.comment-area{
+    margin-bottom:50px;
+}
+
+.comment-area textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+.comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-area input:hover{
+    border: solid 1px orange;
+}
+
+
+.hidden {
+    display: none;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #444;
+    background: white;
+    color: black;
+}
+
+.table-head, .table-row {
+    display: flex;
+}
+
+.table-head div, .table-row div {
+    padding: 10px;
+    margin: 5px;
+}
+
+.table-head .status, .table-row .status {
+    flex: 5%;
+    text-align: center;
+}
+
+.table-head .subjects, .table-row .subjects {
+    flex: 70%;
+}
+
+.comment-area {
+    margin-top: 20px;
+}
+
+.comment-area textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: solid 1px white;
+}
+
+.comment-area input {
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#replyBtn {
+    background: orange;
+}
+
+/*------------------------------------------------- navBar---------------------------------------- */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px;
+    z-index: 1;
+    background: #333;
+    overflow-x: hidden;
+    padding-top: 10px;
+    transition: 0.6s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0,0,5);
+}
+
+.sidebar:hover {
+    width: 200px;
+    transition: 0.6s ease;
+}
+
+.sidebar ul {
+    position: relative;
+    height: 97vh;
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.sidebar ul li:hover {
+    background: #06e6e6;
+    transition: 0.3s ease;
+}
+
+.sidebar ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar ul li .logo {
+    margin-bottom: 80px;
+   
+}
+.sidebar ul li .logo .text {
+    font-size: 18px;
+    font-weight: 600;
+}
+ 
+.sidebar ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 75px;
+    height: 60px;
+    font-size: 22px;
+}
+
+.sidebar ul li a .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+}
+
+
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
+
+
+.headerh2 {
+  margin: auto;
+  font-family: "Vast Shadow", serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+ 
+}
+header{
+    background: none;
+}
+
+
+/* --------------------------------FOOTER---------------------------- */
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(0, 0, 0);
+   color: white;
+   text-align: center;
+   padding: 5px;
+
+}
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    
+    <div class="headerDiv">
+        <h2 class="headerh2">PELIPÖLLÖ</h2>
+    </div>
+    
+
+    <div class="sidebar">
+        <ul>
+            <li> 
+                <a href="#"class="logo">
+                    <span class="icon"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
+                   
+                    
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <Span class="text">Profile </Span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-question"></i></span>
+                    <Span class="text">FAQ</Span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <Span class="text">Search</Span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>  
+
+
+
+    <div>
+        <div class="brightness"></div>
+        <div class="container">
+            <!--Navigation-->
+            <div class="navigate">
+                <span><a href="index.html">Kotisivu</a> >> <a href="konsolipalsta.html">Konsolipalsta</a> >> Aihe</span>
+            </div>
+
+            <!--Topic Section-->
+            <div class="topic-container">
+                <!--Original thread-->
+                <div class="head">
+                    <div class="authors">Author</div>
+                    <div class="content">Topic: random topic (Read 1325 Times)</div>
+                </div>
+
+                <div class="body">
+                    <div class="authors">
+                        <div class="username"><a href="">Username</a></div>
+                        <div>Role</div>
+                        <img src="https://cdn.pixabay.com/photo/2015/11/06/13/27/ninja-1027877_960_720.jpg" alt="">
+                        <div>Posts: <u>45</u></div>
+                        <div>Points: <u>4586</u></div>
+                    </div>
+                    <div class="content">
+                        <div class="container">
+                            <h1 id="topicTitle">Loading...</h1> <br><br>
+                            <p id="topicMessage"></p><br> <br>
+                            <hr> <br> <br>
+                            <h2>Comments:</h2> <br>
+                            <div id="commentsSection"></div>
+                            <div class="comment-area">
+                                <textarea id="replyInput" placeholder="Write a reply..."></textarea>
+                                <input type="button" id="replyBtn" value="Reply">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Author: Hege Refsnes<br>
+        <a href="mailto:hege@example.com">hege@example.com</a></p>
+      </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
