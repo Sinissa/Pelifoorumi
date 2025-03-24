@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const showCreateTopic = document.getElementById("showCreateTopic4");
-    const createTopicSection = document.getElementById("createTopicSection4");
+    const showCreateTopic = document.getElementById("showCreateTopic");
+    const createTopicSection = document.getElementById("createTopicSection");
     const createTopicBtn = document.getElementById("createTopicBtn");
     const topicTitleInput = document.getElementById("topicTitle");
     const topicMessageInput = document.getElementById("topicMessage");
