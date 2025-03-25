@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="content">
                     <div>
-                        <p>${replyObj.text}</p>
+                        <p>${replyObj.text}</p><br><br>
                         <div class="stat-item">
-                            <h1>Likes: <span id="like-count-${index}">${replyObj.likes}</span></h1>
+                            <h1>Likes: <span id="like-count-${index}">${replyObj.likes}</span></h1><br>
                             <button class="like-button" onclick="incrementLikes(${index})">Like</button>
                         </div>
                     </div>
