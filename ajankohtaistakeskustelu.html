@@ -23,14 +23,15 @@
 }
 
 html{
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Titillium Web', sans-serif;
     padding-left: 60px;
 }
 
 body {
-    background-image: url(./kuvat/img3.jpg);
+    background-image: url(./kuvat/back.jpg);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
     color:#FEFEFE;
@@ -49,7 +50,7 @@ body {
 }    */   
 
 a{
-    color: orange;
+    color: black;
     font-weight: bolder;
     text-decoration: none;
 }
@@ -60,7 +61,7 @@ h1{
 }
 
 button {
-    background: orange;
+    background: rgba(243, 241, 254, 0.81);
     padding: 5px;
     border-radius: 10px;
 }
@@ -71,9 +72,16 @@ button {
 
 
 .container{
-    margin: 20px;
     padding: 20px;
     min-height: 100vh;
+}
+
+.container-back { 
+    background: #0a0008a4;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 70%;
 }
 
 .subforum{
@@ -121,6 +129,12 @@ button {
         padding: 10px;
     }
 
+    .container-back {
+        background: #0a0008a4;
+        margin: 0 auto;
+        width: 70%;
+    }
+
     .subforum-row{
         display: grid;
         grid-template-columns: 25% 75%;
@@ -143,6 +157,12 @@ button {
     .container{
         margin: 15px;
         padding: 15px;
+    }
+
+    .container-back {
+        background: #0a0008a4;
+        margin: 0 auto;
+        width: 70%;
     }
 
     .subforum-row{
@@ -231,12 +251,14 @@ button {
 
 .table-row{
     display: flex;
+    border: 1px solid black;
+    background: rgba(240, 239, 239, 0.84);
 }
 
 .table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
     padding: 5px;
     margin: 2px;
-    border: 3px solid white;
+    color: black;
 }
 
 .table-row .status{
@@ -269,7 +291,7 @@ button {
 }
 
 .navigate a:hover{
-    color: orange;
+    color: #6d016d;
     font-weight: bolder;
 }
 
@@ -304,7 +326,10 @@ hr {
     display: flex;
     padding: 10px;
     margin-top: 5px;
-    border: 3px solid gray;
+}
+
+.username > a {
+    color: white;
 }
 
 .body .authors .username{
@@ -345,7 +370,7 @@ hr {
 }
 
 .comment-area input:hover{
-    border: solid 1px orange;
+    border: solid 1px #6d016d;
 }
 
 
@@ -399,7 +424,7 @@ input[type="text"], textarea {
 }
 
 #replyBtn {
-    background: orange;
+    background: rgba(243, 241, 254, 0.81);
 }
 
 /*------------------------------------------------- navBar---------------------------------------- */
@@ -605,8 +630,7 @@ footer {
 
 
 
-    <div>
-        <div class="brightness"></div>
+    <div class="container-back">
         <div class="container">
             <!--Navigation-->
             <div class="navigate">
