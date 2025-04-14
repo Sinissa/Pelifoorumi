@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,
+    300;1,400;1,500&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+<style>
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Mono", monospace;
+}
+
+body {
+    background-image: url(back.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.container-back { 
+    background: #0a0008a4;
+    margin: 0 auto;
+    width: 60%;
+    height: 100vh;
+}
+
+form {
+    text-align: center;
+    padding: 30vh 0;
+}
+
+
+input {
+    margin: 15px;
+    padding: 5px;
+}
+
+#checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+
+#button {
+    padding: 10px;
+    background: #6d016d;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#button:hover {
+    color: white; 
+    filter: drop-shadow(0 0 2em rgb(251, 4, 243));
+}
+
+#username, #password {
+    font-size: 25px;
+}
+
+/* For the smartphones */
+@media screen and (max-width: 590px) {
+    body {
+        font-size: 15px;
+    }
+    #checkbox {
+    width: 15px;
+    height: 15px;
+    }
+
+    #button {
+        font-size: 15px;
+    }
+
+    #username, #password {
+        font-size: 15px;
+    }
+}
+  
+</style>
+</head>
+<body>
+    <div class="container-back">
+        <form action="#">
+            <label for="username">Käyttäjätunnus:</label><br>
+            <input type="text" id="username" name="username" placeholder="Käyttäjätunnus"><br>
+            <label for="password">Salasana:</label><br>
+            <input type="password" id="password" placeholder="Salasana" id="myInput"><br>
+            <input type="checkbox" id="checkbox" onclick="myFunction()">Näytä salasana<br><br>
+            <input type="submit" id="button" value="Kirjaudu Sisään">
+        </form>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
