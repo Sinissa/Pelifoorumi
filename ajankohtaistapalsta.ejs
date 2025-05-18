@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
+    <title>Ajankohtaista</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,25 +29,13 @@ html{
 }
 
 body {
-    background-image: url(./kuvat/back.jpg);
+    background-image: url(/images/js/back.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     color:#FEFEFE;
-}
-
-/* .brightness {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    z-index: -99;
-    backdrop-filter: brightness(50%);
-    position: fixed;
-    top: 0;
-    left: 0;
-}    */   
+} 
 
 a{
     color: black;
@@ -208,26 +196,6 @@ button {
     font-size:20px;
     font-weight:bold;
 }
-
-/* Header Styling */
-
-/*header{
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: rgb(163, 23, 23);
-    text-align: center;
-}*/
-
-/* Footer Styling */
-
-/*footer{
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgb(163, 23, 23);
-    text-align: center;
-}*/
 
 /* ########################################### */
 /*            posts.html                       */
@@ -613,28 +581,28 @@ footer {
     <div class="sidebar">
         <ul>
             <li> 
-                <a href="#"class="logo">
+                <a href="/index"class="logo">
                     <span class="icon"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
                    
                     
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/profile">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <Span class="text">Profile </Span>
+                    <Span class="text">Profiili</Span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fa-solid fa-question"></i></span>
-                    <Span class="text">FAQ</Span>
+                    <Span class="text">YKK</Span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fa-solid fa-gear"></i></span>
-                    <Span class="text">Search</Span>
+                    <Span class="text">Etsi</Span>
                 </a>
             </li>
             
@@ -646,34 +614,34 @@ footer {
         <div class="container">
             <!--Navigation-->
             <div class="navigate">
-                <span><a href="index.html">Kotisivu</a> >> Ajankohtaista</span>
+                <span><a href="/index">Kotisivu</a> >> Ajankohtaista</span>
             </div>
-            <button id="showCreateTopic" class="styled-button">+ Create New Topic</button>
-            <button onclick="deleteItems()">Delete items</button>
+            <button id="showCreateTopic" class="styled-button">+ Aloita uusi keskustelu</button>
+            <button onclick="deleteItems()">Poista julkaisu</button>
 
             <div id="createTopicSection" class="hidden">
                 <input type="text" id="topicTitle" placeholder="Enter topic title">
                 <textarea id="topicMessage" placeholder="Enter topic message"></textarea>
-                <button id="createTopicBtn" class="styled-button">Create Topic</button>
+                <button id="createTopicBtn" class="styled-button">Julkaise</button>
             </div>
 
             <!--Display posts table-->
             <div class="posts-table">
                 <div class="table-head">
                     <div class="status">Status</div>
-                    <div class="subjects">Subjects</div>
-                    <div class="replies">Replies/Views</div>
-                    <div class="last-reply">Last Reply</div>
+                    <div class="subjects">Aihe</div>
+                    <div class="replies">Suosio</div>
+                    <div class="last-reply">Viimeisin kommentti</div>
                 </div>
                 <div class="table-row">
                     <div class="status"><i class="fa fa-fire"></i></div>
                     <div class="subjects">
                         <a href="">Tulevia julkaisuja</a>
                         <br>
-                        <span>Started by <b><a href="">ShadowByte</a></b> .</span>
+                        <span>Aloittaja <b><a href="">ShadowByte</a></b> .</span>
                     </div>
                     <div class="replies">
-                        2 replies <br> 125 views
+                        2 <span style='font-size:30px;'>&#128483;</span> <br> 12 <i style="font-size:20px" class="fa">&#xf087;</i>
                     </div>
 
                     <div class="last-reply">
@@ -687,10 +655,10 @@ footer {
                     <div class="subjects">
                         <a href="">Peli-uutisia</a>
                         <br>
-                        <span>Started by <b><a href="">GlitchHunter</a></b> .</span>
+                        <span>Aloittaja <b><a href="">GlitchHunter</a></b> .</span>
                     </div>
                     <div class="replies">
-                        2 replies <br> 125 views
+                        13 <span style='font-size:30px;'>&#128483;</span> <br> 120 <i style="font-size:20px" class="fa">&#xf087;</i>
                     </div>
 
                     <div class="last-reply">
@@ -704,10 +672,10 @@ footer {
                     <div class="subjects">
                         <a href="">Viivästyneet pelit</a>
                         <br>
-                        <span>Started by <b><a href="">RespawnKing</a></b> .</span>
+                        <span>Aloittaja <b><a href="">RespawnKing</a></b> .</span>
                     </div>
                     <div class="replies">
-                        2 replies <br> 125 views
+                        0 <span style='font-size:30px;'>&#128483;</span> <br> 1 <i style="font-size:20px" class="fa">&#xf087;</i>
                     </div>
 
                     <div class="last-reply">
@@ -721,10 +689,10 @@ footer {
                     <div class="subjects">
                         <a href="">Ubisoft: AC Shadows</a>
                         <br>
-                        <span>Started by <b><a href="">PixelPhantom</a></b> .</span>
+                        <span>Aloittaja <b><a href="">PixelPhantom</a></b> .</span>
                     </div>
                     <div class="replies">
-                        2 replies <br> 125 views
+                        6087 <span style='font-size:30px;'>&#128483;</span> <br> 56739 <i style="font-size:20px" class="fa">&#xf087;</i>
                     </div>
 
                     <div class="last-reply">
@@ -749,10 +717,139 @@ footer {
 
 
     <footer>
-        <p>Author: Hege Refsnes<br>
-        <a href="mailto:hege@example.com">hege@example.com</a></p>
-      </footer>
+        <p id="footer">&copy Taitotalo<br>
+        <a href="mailto:pelipollot@esimerkki.fi">pelipollot@esimerkki.fi</a></p>
+    </footer>
 
-    <script src="ajankohtaista.js"></script>
+    <script>
+// Get forum identifier from URL or set a default one
+const forumKey = "topics_forum_ajankohtaista"; // Change this for different forums
+
+document.addEventListener("DOMContentLoaded", function () {
+    const showCreateTopic = document.getElementById("showCreateTopic");
+    const createTopicSection = document.getElementById("createTopicSection");
+    const createTopicBtn = document.getElementById("createTopicBtn");
+    const topicTitleInput = document.getElementById("topicTitle");
+    const topicMessageInput = document.getElementById("topicMessage");
+    const topicsList = document.getElementById("topicsList");
+
+    showCreateTopic.addEventListener("click", function () {
+        createTopicSection.classList.toggle("hidden");
+    });
+
+    function loadTopics() {
+        topicsList.innerHTML = "";
+        const topics = JSON.parse(localStorage.getItem(forumKey)) || []; // Use unique forum key
+        topics.forEach((topic, index) => {
+            const topicDiv = document.createElement("div");
+            topicDiv.classList.add("table-row");
+            topicDiv.innerHTML = `
+                <div class="status"><i class="fa fa-book"></i></div>
+                <div class="subjects">
+                    <a href="/kommentti?index=${index}&forumKey=${forumKey}">${topic.title}</a><br>
+                    <span>Started by <b><%= username %></b></span>
+                </div>
+                <div class="replies">0 replies <br> 0 views</div>
+                <div class="last-reply">-</div>
+            `;
+            topicsList.appendChild(topicDiv);
+        });
+    }
+
+    createTopicBtn.addEventListener("click", function () {
+        const title = topicTitleInput.value.trim();
+        const message = topicMessageInput.value.trim();
+        if (title && message) {
+            let topics = JSON.parse(localStorage.getItem(forumKey)) || [];
+            topics.push({ title, message, replies: [] });
+            localStorage.setItem(forumKey, JSON.stringify(topics)); // Save under unique forum key
+            topicTitleInput.value = "";
+            topicMessageInput.value = "";
+            createTopicSection.classList.add("hidden");
+            loadTopics();
+        } else {
+            alert("Please enter both a title and a message!");
+        }
+    });
+
+    loadTopics();
+});
+
+function deleteItems() {
+    localStorage.removeItem(forumKey); // Delete only current forum topics
+    location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const topicIndex = urlParams.get("index");
+    const forumKey = urlParams.get("forumKey"); // Retrieve forum key from URL
+
+    const topicTitleElement = document.getElementById("topicTitle");
+    const topicMessageElement = document.getElementById("topicMessage");
+    const commentsSection = document.getElementById("commentsSection");
+    const replyInput = document.getElementById("replyInput");
+    const replyBtn = document.getElementById("replyBtn");
+
+    let topics = JSON.parse(localStorage.getItem(forumKey)) || [];
+
+    if (topicIndex !== null && topics[topicIndex]) {
+        topicTitleElement.textContent = topics[topicIndex].title;
+        topicMessageElement.textContent = topics[topicIndex].message;
+    } else {
+        topicTitleElement.textContent = "Unknown Topic";
+    }
+
+    function loadComments() {
+        commentsSection.innerHTML = "";
+        let topic = topics[topicIndex] || { replies: [] };
+
+        topic.replies.forEach((replyObj, index) => {
+            const commentDiv = document.createElement("div");
+            commentDiv.classList.add("body");
+            commentDiv.innerHTML = `
+                <div class="authors">
+                    <div class="username"><a href=""><%= username %></a></div>
+                    <div><%= username %></div>
+                    <img src="https://cdn.pixabay.com/photo/2015/11/06/13/27/ninja-1027877_960_720.jpg" alt="User Avatar">
+                    <div>Posts: <u>${Math.floor(Math.random() * 100)}</u></div>
+                    <div>Points: <u>${Math.floor(Math.random() * 5000)}</u></div>
+                </div>
+                <div class="content">
+                    <div>
+                        <p>${replyObj.text}</p><br><br>
+                        <div class="stat-item">
+                            <h1>Likes: <span id="like-count-${index}">${replyObj.likes}</span></h1><br>
+                            <button class="like-button" onclick="incrementLikes(${index})">Like</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            commentsSection.appendChild(commentDiv);
+        });
+    }
+
+    replyBtn.addEventListener("click", function () {
+        const comment = replyInput.value.trim();
+        if (comment) {
+            if (!topics[topicIndex].replies) topics[topicIndex].replies = [];
+            topics[topicIndex].replies.push({ text: comment, likes: 0 });
+            localStorage.setItem(forumKey, JSON.stringify(topics)); // Store under correct forum key
+            replyInput.value = "";
+            loadComments();
+        }
+    });
+
+    window.incrementLikes = function (commentIndex) {
+        topics[topicIndex].replies[commentIndex].likes += 1;
+        localStorage.setItem(forumKey, JSON.stringify(topics));
+        document.getElementById(`like-count-${commentIndex}`).innerText = topics[topicIndex].replies[commentIndex].likes;
+    };
+
+    loadComments();
+});
+
+
+    </script>
 </body>
 </html>
