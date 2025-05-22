@@ -106,7 +106,7 @@
         }
 
         .container-background {
-            background-image: url(/images/js/back.jpg);
+            background-image: url(back.jpg);
             position: absolute;
             background-size: cover;
             width: 100%;
@@ -141,7 +141,7 @@
             background-size: cover;
             background-position: center;
             cursor: pointer;
-            background-image: url(/images/js/plus.png)
+            background-image: url(plus.png);
         }
 
         .container-games {
@@ -333,27 +333,27 @@
         <ul>
             <li> 
                 <!--Logoa ei ole, mutta lisätty kotisivun html kuten oli aiemmin sovittu-->
-                <a href="/index" class="logo">
+                <a href="index.html" class="logo">
                     <span class="icon"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
                 </a>
             </li>
             <li>
-                <a href="/profile">
+                <a href="profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <span class="text">Profiili</span>
+                    <span class="text">Profile</span>
                 </a>
             </li>
             <li>
                 <a href="FAQ.html">
                     <span class="icon"><i class="fa-solid fa-question"></i></span>
-                    <span class="text">YKK</span>
+                    <span class="text">FAQ</span>
                 </a>
             </li>
             <li>
                 <!--Tälle oma sivunsa?-->
                 <a href="#">
                     <span class="icon"><i class="fa-solid fa-gear"></i></span>
-                    <span class="text">Etsi</span>
+                    <span class="text">Search</span>
                 </a>
             </li>
         </ul>
@@ -394,7 +394,7 @@
 
         <div>
             <div class="otsikko">
-                <h1 id="user-name-title">Pelipöllö <%= username %> </h1>
+                <h1 id="user-name-title">Pelipöllö</h1>
             </div>
             <div class="container-info">
                 <div class="info">
@@ -409,7 +409,7 @@
             <div class="container-stats">
                 <div class="stats">
                     <div class="stat-item">
-                        <h2 id="likeCounter">Tykkäykset: <span id="likes-count"></span></h2>
+                        <h2 id="likeCounter">Tykkäykset: <span id="like-count">126</span></h2>
                     </div>
                     <div class="stat-item">
                         <h2 id="postCounter">Julkaisut: <span id="post-count">12</span></h2>
@@ -483,9 +483,8 @@
         }
 
         // komento, jossa käyttäjän nimi tulee näkyviin
-        //const userName = 'Essi Esimerkki'; // käyttäjänimi
-        //setUserName(userName);
-
+        const userName = 'Essi Esimerkki'; // käyttäjänimi
+        setUserName(userName);
     </script>
 </body>
 </html>
