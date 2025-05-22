@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeliPöllö FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Monoton&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="owl1.png">
+    <style> 
+
+.container_header {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 60%;
+            padding: 20px;
+            border: 10px double #6d016d;
+            margin-top: 10%;
+            transform: rotate(-3deg);
+            background-clip: text;
+            color: rgba(243, 241, 254, 0.81);
+            font-family: 'DM MONO';
+            font-size: 30px;
+        }
+
+        .owl {
+            height: 100px;
+            transform: rotate(-5deg);
+            margin-left: -600px;
+            padding: none;
+        }
+
+        .cursor::after{
+
+            content: '|'
+
+        }
+
+        .dm-mono-regular {
+        font-family: "DM Mono", monospace;
+        font-weight: 400;
+        font-style: normal;
+        }
+        body {
+            background-image: url(pics/back.jpg);
+            color: #fff;
+            text-align: center;
+            padding: 150px;
+            background-color:  #000000cf;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Courier New', Courier, monospace ;
+            
+        }
+
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 70px;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.778);
+            overflow-x: hidden;
+            padding-top: 10px;
+            transition: 0.6s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0,5);
+            scrollbar-width: none ;
+        }
+
+        .sidebar:hover {
+            width: 200px;
+            transition: 0.6s ease;
+        }
+
+        .sidebar ul {
+            position: relative;
+            height: 97vh;
+        }
+
+        .sidebar ul li {
+            list-style: none;
+            margin: 5px 0;
+            font-family: 'DM Mono';
+        }
+
+        .sidebar ul li:hover {
+            background: rgba(17, 27, 141, 0.785);
+            transition: 0.3s ease;
+        }
+
+        .sidebar ul li a {
+            position: relative;
+            display: flex;
+            white-space: nowrap;
+            text-decoration: none;
+            color: #fff;
+        }
+
+    /*Logo puutuu, toimintasuunnitelma?*/
+        .sidebar ul li .logo {
+            margin-bottom: 80px;
+        }
+
+        .sidebar ul li .logo .text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .sidebar ul li a .icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 75px;
+            height: 60px;
+            font-size: 22px;
+        }
+
+        .sidebar ul li a .text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 500;
+        }
+
+
+
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #222222d9;
+            padding: 20px;
+            border-radius: 10px;
+            
+        }
+        .faq-item {
+            border-bottom: 1px solid #444;
+            padding: 10px 0;
+            text-align: left;
+        }
+        .faq-item button {
+            background: none;
+            border: none;
+            color: rgb(191, 33, 186);
+            font-size: 16px;
+            cursor: pointer;
+            width: 50%;
+            text-align: left;
+        }
+        .faq-answer {
+            display: none;
+            color: #ffffff;
+            margin-top: 5px;
+            font-family: "DM Mono", monospace;
+        }
+        .input-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-container input {
+            width: 100%;
+            font-family: "DM Mono", monospace;
+        }
+        .input-container button{
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 20px;
+            font-family: "DM Mono", monospace;
+        }
+        .input-container input {
+            background: #292828;
+            color: #fff;
+        }
+        .input-container button {
+            background: linear-gradient(rgb(49, 61, 120), rgb(122, 20, 122));
+            color: #fff;
+            cursor: pointer;
+            border: #fff;
+        }
+    </style>
+</head>
+<body><!--käytin paljon tekoälyä, jos epäselvyyksiä kysy-->
+   
+    
+    <div class="sidebar">
+        <ul>
+            <li> 
+                <!--Logoa ei ole, mutta lisätty kotisivun html kuten oli aiemmin sovittu-->
+                <a href="index.html" class="logo">
+                    <span class="icon"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="FAQ.html">
+                    <span class="icon"><i class="fa-solid fa-question"></i></span>
+                    <span class="text">FAQ</span>
+                </a>
+            </li>
+            <li>
+                <!--Tälle oma sivunsa?-->
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="text">Search</span>
+                </a>
+            </li>
+        </ul>
+    </div>  
+    
+    <img class=owl src="owl1.png" alt="owl">
+    <div class="container">
+       
+        <h1>Pelipöllö FAQ</h1><!-- headeri --> 
+        <div id="faq-list"><!-- lista johon tulee kysymykset ja niiden vastaukset, siihen on lisätty js helpottaen sujuvuutta ja interaktiivistuutta --> 
+            <div class="faq-item">
+                <button onclick="toggleAnswer('q1')">Mikä on Pelipöllö?</button><!-- toggleAnswer antaa tehdä listan kysymyksiä jotka ovat buttoneit, jossa on toggele toiminto jolla saa sitten vastuakset näkymään alas --> 
+                <p id="q1" class="faq-answer">PeliPöllö on paras opas pelivinkkeihin, nikseihin ja yhteisön hauskanpitoon!</p>
+            </div>
+            <div class="faq-item">
+                <button onclick="toggleAnswer('q2')">Miten voin liittyä yhteisöön?</button>
+                <p id="q2" class="faq-answer">Rekisteröidy verkkosivustollamme ja liity Discord-palvelimeemme!</p>
+            </div>
+            <div class="faq-item">
+                <button onclick="toggleAnswer('q3')">Mitä pelejä käsittelemme?</button>
+                <p id="q3" class="faq-answer">Käsittelemme monia pelejä FPS:stä RPG:ihin ja paljon muuta!</p>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <h2>Lähetä oma kysymyksesi</h2>
+            <input type="text" id="user-question" placeholder="Kirjoita kysymyksesi...">
+            <button onclick="addQuestion()">Lähetä</button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function addQuestion() {
+            var questionInput = document.getElementById('user-question');
+            var questionText = questionInput.value.trim();
+            if (questionText === '') return;
+            
+            var newQuestionId = 'q' + Date.now();
+            var faqList = document.getElementById('faq-list');
+            
+            var newEntry = document.createElement('div');
+            newEntry.classList.add('faq-item');
+            
+            var button = document.createElement('button');
+            button.textContent = questionText;
+            button.setAttribute('onclick', `toggleAnswer('${newQuestionId}')`);
+            
+            var answer = document.createElement('p');
+            answer.id = newQuestionId; //aina kun käyttäjä kysyy nii se näkyy palstassa ja sitten siihen alle tulee alla mainnittu vastaus ja siihen voi sitten lisää vastauksen
+            answer.classList.add('faq-answer');
+            answer.textContent = "Kiitos kysymyksestä! Vastaamme pian.";
+            
+            newEntry.appendChild(button);
+            newEntry.appendChild(answer);
+            faqList.appendChild(newEntry);
+            
+            questionInput.value = '';
+        }
+
+        function Delete() {
+        _CURSOR.style.display = "none";
+        }
+        
+    </script>
+</body>
+</html>
+<!-- lisään vielä kommenteja, jotta on ymmärrettävä ja niin että saa lisättyä js koodin sql:lään-->
