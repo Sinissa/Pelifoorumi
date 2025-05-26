@@ -592,7 +592,7 @@ footer {
             <li>
                 <a href="#">
                     <span class="icon"><i class="fa-solid fa-question"></i></span>
-                    <Span class="text">YKK</Span>
+                    <Span class="text">FAQ</Span>
                 </a>
             </li>
             <li>
@@ -611,7 +611,7 @@ footer {
         <div class="container">
             <!--Navigation-->
             <div class="navigate">
-                <span><a href="/index">Kotisivu</a> >> <a href="/yleista">Yleistä</a> >> Aihe</span>
+                <span><a href="index.html">Kotisivu</a> >> <a href="yleistapalsta.html">Yleistä</a> >> Aihe</span>
             </div>
 
             <!--Topic Section-->
@@ -680,7 +680,7 @@ document.addEventListener("DOMContentLoaded", function () {
             topicDiv.innerHTML = `
                 <div class="status"><i class="fa fa-book"></i></div>
                 <div class="subjects">
-                    <a href="/yleiskommentti.ejs?index=${index}&forumKey=${forumKey}">${topic.title}</a><br>
+                    <a href="yleistakeskustelu?index=${index}&forumKey=${forumKey}">${topic.title}</a><br>
                     <span>Started by <b>User</b></span>
                 </div>
                 <div class="replies">0 replies <br> 0 views</div>
