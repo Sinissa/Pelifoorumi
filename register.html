@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,
+    300;1,400;1,500&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Rekisteröidy</title>
+    <style>
+        * {
+            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "DM Mono", monospace;
+        }
+
+        body {
+            background-image: url(back.jpg);
+            color: white;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-size: 25px;
+            overflow: hidden;
+        }
+
+        .container-back { 
+            background: #0a0008a4;
+            margin: 0 auto;
+            width: 60%;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            padding: 30vh 0;
+        }
+
+
+        input {
+            margin: 15px;
+            padding: 5px;
+        }
+
+        #checkbox {
+            width: 25px;
+            height: 25px;
+        }
+
+
+        #button {
+            padding: 10px;
+            background: #6d016d;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        #button:hover {
+            color: white; 
+            filter: drop-shadow(0 0 2em rgb(251, 4, 243));
+        }
+
+        #username, #password {
+            font-size: 25px;
+        }
+
+        @media screen and (max-width: 590px) {
+            body {
+                font-size: 15px;
+            }
+            #checkbox {
+            width: 15px;
+            height: 15px;
+            }
+
+            #button {
+                font-size: 15px;
+            }
+
+            #username, #password {
+                font-size: 15px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <% if (error) { %>
+        <p style="color:red;"><%= error %></p>
+    <% } %>
+    <div class="container-back">
+        <h1>Rekisteröidy</h1>
+        <form method="POST" action="/register">
+            <label for="username">Käyttäjänimi:</label><br>
+            <input type="text" id="username" name="username" placeholder="Käyttäjänimi" required><br>
+            <label for="password">Salasana:</label><br>
+            <input type="password" id="password" name="password" placeholder="Salasana" required><br><br>
+            <input type="submit" id="button" value="Rekisteröidy"></input><br><br>
+            <p>Onko sinulla jo tili? <a href="/login">Kirjaudu sisään</a></p>
+        </form>
+    </div>
+</body>
+</html>
