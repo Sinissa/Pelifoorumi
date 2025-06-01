@@ -17,16 +17,75 @@
     box-sizing: border-box;
     margin: 0%;
     padding: 0;
-    font-family: "DM Mono", monospace;
-   
-    
+    font-family: "DM Mono", monospace;      
 }
 
 html{
     font-size: 20px;
     font-family: 'Titillium Web', sans-serif;
     padding-left: 60px;
-}
+}        
+    /* Kirjaudu ja rekisteröidy -painikkeet */
+    .button-container {
+        position: fixed; 
+        top: 20px; 
+        right: 20px;
+        z-index: 1000; 
+    }
+
+    .icon-button {
+        background-color:rgba(240, 239, 239, 0.84);
+        border-color:#6d016d;
+        border-width: 3px;
+        border-radius: 5px;
+        color: black;
+        padding: 6px 47px;
+        font-size: 34px;
+        cursor: pointer;
+    }
+
+    .icon-button:hover {
+        cursor: pointer;
+        filter: drop-shadow(0 0 2em #c189ca);
+        background-color: rgba(240, 239, 239);
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        color: black;
+        transform: translateX(-50%);
+        background-color: rgba(240, 239, 239, 0.84);
+        border: 1px solid;
+        border-color:#6d016d;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px (0 0 2em #c189ca);
+        z-index: 1;
+        height: max-content;
+        width: max-content;
+    }
+
+    .button-container:hover .dropdown {
+        display: block;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 8px 8px;
+        color: black;
+        text-decoration: none;
+        font-family: 'DM Mono';
+        font-size: 16px;
+    }
+
+    .dropdown a:hover {
+        background-color: rgba(240, 239, 239);
+        cursor: pointer;
+        filter: drop-shadow(0 0 2em #c189ca);
+    }
+    /* Painikkeet -osio loppuu */
 
 body {
     background-image: url(back.jpg);
@@ -145,9 +204,7 @@ button {
         border: 0;
         height: 1px;
         background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255, 255, 255, 0.75), rgba(190, 190, 190, 0));
-    }
-
-    
+    }   
 
   }
 
@@ -185,8 +242,6 @@ button {
     }
 
   }
-
-
 
 /* forum info Styling */
 .forum-info{
